@@ -1,0 +1,307 @@
+version: 2
+
+sources:
+  - name: conformed
+    database: raw
+    schema: conformed
+
+    tables:
+      - name: DateDimension
+        columns:
+          - name: DateKey
+            tests:
+              - unique
+              
+  - name: stackoverflow
+    database: raw
+    schema: stackoverflow
+    tables:
+        - name: users_info
+          description: "This table contains the user data."
+          columns:
+          - name: id
+            description: "Unique identifier for each user."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: aboutme
+            description: "Biographical information provided by the user."
+            data_type: nvarchar(max)
+          - name: age
+            description: "Age of the user. Nullable since it may not be provided."
+            data_type: int
+          - name: creationdate
+            description: "Timestamp of when the user account was created."
+            data_type: datetime
+            tests:
+              - not_null
+          - name: displayname
+            description: "The display name chosen by the user."
+            data_type: nvarchar(40)
+            tests:
+              - not_null
+          - name: downvotes
+            description: "The count of downvotes received by the user."
+            data_type: int
+            tests:
+              - not_null
+          - name: emailhash
+            description: "Hash of the user's email address."
+            data_type: nvarchar(40)
+          - name: lastaccessdate
+            description: "Timestamp of the user's last login."
+            data_type: datetime
+            tests:
+              - not_null
+          - name: location
+            description: "Location provided by the user."
+            data_type: nvarchar(100)
+          - name: reputation
+            description: "Reputation score of the user."
+            data_type: int
+            tests:
+              - not_null
+          - name: upvotes
+            description: "The count of upvotes received by the user."
+            data_type: int
+            tests:
+              - not_null
+          - name: views
+            description: "The number of times the user's profile has been viewed."
+            data_type: int
+            tests:
+              - not_null
+          - name: websiteurl
+            description: "The URL of the user's personal or professional website."
+            data_type: nvarchar(200)
+          - name: accountid
+            description: "Identifier for the user's account. Nullable since it may not be provided."
+            data_type: int
+        - name: votes
+          description: "This table contains the voting data."
+          columns:
+          - name: id
+            description: "Unique identifier for each vote."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: postid
+            description: "Identifier for the post that the vote is associated with."
+            data_type: int
+            tests:
+              - not_null
+          - name: userid
+            description: "Identifier for the user who cast the vote. Nullable."
+            data_type: int
+          - name: bountyamount
+            description: "Amount of bounty (if any) associated with the vote. Nullable."
+            data_type: int
+          - name: votetypeid
+            description: "Identifier for the type of vote cast."
+            data_type: int
+            tests:
+              - not_null
+          - name: creationdate
+            description: "Timestamp of when the vote was cast."
+            data_type: datetime
+            tests:
+              - not_null  
+        - name: votetypes
+          description: "This table contains the types of votes."
+          columns:
+          - name: id
+            description: "Unique identifier for each vote type."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "The name of the vote type."
+            data_type: varchar(50)
+            tests:
+              - not_null
+        - name: posttypes
+          description: "This table contains the different types of posts."
+          columns:
+          - name: id
+            description: "Unique identifier for each post type."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: type
+            description: "The name of the post type."
+            data_type: nvarchar(50)
+            tests:
+              - not_null
+
+        - name: posts
+          description: "This table contains the posts data."
+          columns:
+          - name: id
+            description: "Unique identifier for each post."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: acceptedanswerid
+            description: "Identifier for the accepted answer to this post, if applicable."
+            data_type: int
+          - name: answercount
+            description: "Number of answers this post has received."
+            data_type: int
+          - name: body
+            description: "The content of the post."
+            data_type: nvarchar(max)
+            tests:
+              - not_null
+          - name: closeddate
+            description: "The date and time when the post was closed, if applicable."
+            data_type: datetime
+          - name: commentcount
+            description: "The count of comments on the post."
+            data_type: int
+          - name: communityowneddate
+            description: "The date and time when the post became community-owned, if applicable."
+            data_type: datetime
+          - name: creationdate
+            description: "The date and time when the post was created."
+            data_type: datetime
+            tests:
+              - not_null
+          - name: favoritecount
+            description: "The number of times this post has been marked as a favorite."
+            data_type: int
+          - name: lastactivitydate
+            description: "The date and time of the last activity on the post."
+            data_type: datetime
+            tests:
+              - not_null
+          - name: lasteditdate
+            description: "The date and time of the last edit to the post."
+            data_type: datetime
+          - name: lasteditordisplayname
+            description: "The display name of the last editor of the post."
+            data_type: nvarchar(40)
+          - name: lasteditoruserid
+            description: "The user ID of the last editor of the post."
+            data_type: int
+          - name: owneruserid
+            description: "The user ID of the owner of the post."
+            data_type: int
+          - name: parentid
+            description: "The post ID of the parent post, if this is an answer."
+            data_type: int
+          - name: posttypeid
+            description: "The type ID of the post, indicating whether it's a question, answer, etc."
+            data_type: int
+            tests:
+              - not_null
+          - name: score
+            description: "The score of the post."
+            data_type: int
+            tests:
+              - not_null
+          - name: tags
+            description: "The tags associated with the post."
+            data_type: nvarchar(150)
+          - name: title
+            description: "The title of the post."
+            data_type: nvarchar(250)
+          - name: viewcount
+            description: "The number of views the post has received."
+            data_type: int
+            tests:
+              - not_null
+        - name: postlinks
+          description: "This table contains the links between posts."
+          columns:
+          - name: id
+            description: "Unique identifier for each post link."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: creationdate
+            description: "The date and time when the link was created."
+            data_type: datetime
+            tests:
+              - not_null
+          - name: postid
+            description: "Identifier for the post."
+            data_type: int
+            tests:
+              - not_null
+          - name: relatedpostid
+            description: "Identifier for the related post."
+            data_type: int
+            tests:
+              - not_null
+          - name: linktypeid
+            description: "The type of link between the posts."
+            data_type: int
+            tests:
+              - not_null
+        - name: linktypes
+          description: "This table contains the types of links."
+          columns:
+          - name: id
+            description: "Unique identifier for each link type."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: type
+            description: "The description of the link type."
+            data_type: varchar(50)
+            tests:
+              - not_null
+        - name: comments
+          description: "This table contains comments made on posts."
+          columns:
+          - name: id
+            description: "The primary key for the comments table, uniquely identifying each comment."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: creationdate
+            description: "The date and time when the comment was created."
+            data_type: datetime
+            tests:
+              - not_null
+          - name: postid
+            description: "Foreign key referencing the ID of the post this comment is associated with."
+            data_type: int
+            tests:
+              - not_null
+          - name: score
+            description: "The score or number of votes the comment has received."
+            data_type: int
+          - name: text
+            description: "The actual text content of the comment."
+            data_type: nvarchar(700)
+            tests:
+              - not_null
+          - name: userid
+            description: "Foreign key referencing the ID of the user who made the comment."
+            data_type: int
+        - name: badges
+          description: "This table contains information about badges awarded to users."
+          columns:
+          - name: id
+            description: "The primary key for the badges table, uniquely identifying each badge."
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "The name of the badge."
+            data_type: nvarchar(40)
+            tests:
+              - not_null
+          - name: userid
+            description: "Foreign key referencing the ID of the user who was awarded the badge."
+            data_type: int               

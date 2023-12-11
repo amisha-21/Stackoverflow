@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: comments
+    description: "This table contains information about comments made by users. Each comment is related to a post and may have an associated score."
+    columns:
+      - name: Id
+        description: "The primary key for the Comments table, uniquely identifying each comment."
+      - name: CreationDate
+        description: "The date and time when the comment was created."
+      - name: PostId
+        description: "The foreign key that references the Id in the Posts table, indicating the post to which the comment belongs."
+      - name: Score
+        description: "The score of the comment, which may be null if not scored."
+      - name: Text
+        description: "The text content of the comment, with a maximum length of 700 characters."
+      - name: UserId
+        description: "The foreign key that references the Id in the Users table, indicating the user who made the comment. This can be null if the comment was made by an anonymous user."

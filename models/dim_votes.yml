@@ -1,0 +1,34 @@
+version: 2
+models:
+  - name: dim_votes
+    description: Votes Dimension. One row per Votes 
+    columns:
+      - name: votekey
+        description: The surrogate key of the votes
+        tests:
+          - not_null
+          - unique
+      - name: id
+        description: The business / source key of the votes 
+        tests:
+          - not_null
+          - unique
+      - name: PostId
+        description: "Foreign key to the posts table."
+        data_type: int
+      - name: UserId
+        description: "Foreign key to the users table, nullable."
+        data_type: int
+      - name: BountyAmount
+        description: "The bounty amount placed or awarded for a post, if any."
+        data_type: int
+      - name: VoteTypeId
+        description: "Type of vote indicating the vote's purpose (upvote, downvote, etc.)."
+        data_type: int
+        tests:
+          - not_null
+      - name: CreationDate
+        description: "The date and time when the vote was recorded."
+        data_type: datetime
+        tests:
+          - not_null

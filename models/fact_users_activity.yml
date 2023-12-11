@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: fact_users_activity
+    description: "This table aggregates user activity on Stack Overflow, including posts, comments, votes, and badges, and is used to track user retention and engagement."
+    columns:
+      - name: user_id
+        description: "The unique identifier of the user."
+        tests:
+          - unique
+          - not_null
+
+      - name: account_creation_date
+        description: "The date when the user's account was created."
+        tests:
+          - not_null
+
+      - name: retention_cohort
+        description: "The cohort month for the user based on the account creation date, used for retention analysis."
+        tests:
+          - not_null
+
+      - name: total_posts
+        description: "The total number of posts made by the user."
+        tests:
+          - not_null
+
+      - name: total_comments
+        description: "The total number of comments made by the user."
+        tests:
+          - not_null
+
+      - name: total_votes
+        description: "The total number of votes (upvotes or downvotes) made by the user."
+        tests:
+          - not_null
+
+      - name: total_badges
+        description: "The total number of badges earned by the user."
+        tests:
+          - not_null

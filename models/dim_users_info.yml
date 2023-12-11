@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: dim_users_info
+    description: "Dimension table for user information."
+    columns:
+      - name: userkey
+        description: "Primary key for the dimension table."
+        tests:
+          - unique
+          - not_null
+
+      - name: id
+        description: "Unique identifier for the user."
+        tests:
+          - unique
+          - not_null
+
+      - name: displayname
+        description: "Username for the user."
+        tests:
+          - not_null
+
+      - name: aboutme
+        description: "Information about the user i.e: bio."
+
+      - name: age
+        description: "Age of the user."
+
+      - name: creationdate
+        description: "The date when the user account was created."
+        tests:
+          - not_null
+
+      - name: downvotes
+        description: "The number of downvotes received by the user."
+
+      - name: lastaccessdate
+        description: "The last date when the user accessed their account."
+
+      - name: location
+        description: "The location provided by the user."
+
+      - name: upvotes
+        description: "The number of upvotes received by the user."
+
+      - name: views
+        description: "The number of times the user's profile has been viewed."
+
+      - name: websiteurl
+        description: "The URL of the user's website."
+
+      - name: accountid
+        description: "Identifier for the user's account in an external system."

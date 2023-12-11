@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_posttype
+    description: "This dimension table contains the distinct types of posts that can be created by users. Each row represents a unique type of post, categorized for analytical and reporting purposes."
+    columns:
+      - name: posttypekey
+        description: "Dimension key."
+        data_type: Integer
+        tests:
+          - unique
+          - not_null
+
+      - name: posttypeid
+        description: "The primary key identifying the unique post type."
+        data_type: Integer
+
+      - name: type
+        description: "The type of the post type, such as 'Question' or 'Answer'."
+        data_type: Varchar
+        tests:
+          - not_null

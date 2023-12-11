@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: badges
+    description: "This table contains information about the badges awarded to users on the platform. Each badge is associated with a user and has an award date."
+    columns:
+      - name: Id
+        description: "The primary key of the Badges table, uniquely identifying each badge."
+        tests:
+          - unique
+          - not_null
+
+      - name: Name
+        description: "The name of the badge. This is a variable character field with a maximum length of 40 characters."
+        tests:
+          - not_null
+          - max_length:
+              value: 40
+
+      - name: UserId
+        description: "The foreign key that references the Id in the Users table, indicating the user to whom the badge was awarded."
+        tests:
+          - not_null
+          - foreign_key:
+              target_model: ref('users')  # Replace 'users' with your actual Users model name if different.
+              column_name: Id
+
+      - name: Date
+        description: "The date and time when the badge was awarded to the user."
+        tests:
+          - not_null

@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: fact_site_usage
+    description: "This table aggregates site usage statistics including user signups, daily and monthly active users, and activity heatmaps."
+    columns:
+      - name: signup_date
+        description: "The date a user signed up."
+        tests:
+          - not_null
+          - unique
+
+      - name: new_signups
+        description: "The count of new user signups for a given date."
+        tests:
+          - not_null
+
+      - name: activity_date
+        description: "The date of the activity recorded."
+        tests:
+          - not_null
+
+      - name: daily_active_users
+        description: "The count of unique daily active users."
+        tests:
+          - not_null
+
+      - name: activity_month
+        description: "The month of the activity."
+        tests:
+          - not_null
+
+      - name: monthly_active_users
+        description: "The count of unique monthly active users."
+        tests:
+          - not_null
+
+      - name: activity_hour
+        description: "The hour of the day when the activity was recorded."
+        tests:
+          - not_null
+
+      - name: activity_day_of_week
+        description: "The day of the week when the activity was recorded, represented as an integer where 0 is Sunday."
+        tests:
+          - not_null
+
+      - name: activity_count
+        description: "The count of activities that occurred during a particular hour and day of the week."
+        tests:
+          - not_null

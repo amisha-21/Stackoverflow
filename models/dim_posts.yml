@@ -1,0 +1,87 @@
+version: 2
+models:
+  - name: dim_posts
+    description: Posts Dimension. One row per post 
+    columns:
+      - name: postkey
+        description: The surrogate key of the posts
+        tests:
+          - not_null
+          - unique
+      - name: id
+        description: The business / source key of the posts
+        tests:
+          - not_null
+          - unique
+      - name: acceptedanswerid
+        description: "The ID of the accepted answer post, if one exists."
+        tests:
+          - relationships:
+              to: ref('dbo_posts')
+              field: 'id'
+
+      - name: answercount
+        description: "The number of answers on the post."
+
+      - name: body
+        description: "The body text of the post."
+        tests:
+          - not_null
+
+      - name: closeddate
+        description: "The date and time when the post was closed, if applicable."
+
+      - name: commentcount
+        description: "The number of comments on the post."
+
+      - name: communityowneddate
+        description: "The date and time when the post became community owned."
+
+      - name: creationdate
+        description: "The date and time when the post was created."
+        tests:
+          - not_null
+
+      - name: favoritecount
+        description: "The number of times the post has been marked as a favorite."
+
+      - name: lastactivitydate
+        description: "The date and time of the last activity on the post."
+        tests:
+          - not_null
+
+      - name: lasteditdate
+        description: "The date and time of the last edit to the post."
+
+      - name: lasteditordisplayname
+        description: "The display name of the last user to edit the post."
+
+      - name: lasteditoruserid
+        description: "The user ID of the last user to edit the post."
+
+      - name: owneruserid
+        description: "The user ID of the owner of the post."
+
+      - name: parentid
+        description: "The ID of the parent post, if this is a comment or answer."
+
+      - name: posttypeid
+        description: "The type ID of the post."
+        tests:
+          - not_null
+
+      - name: score
+        description: "The score of the post."
+        tests:
+          - not_null
+
+      - name: tags
+        description: "The tags associated with the post."
+
+      - name: title
+        description: "The title of the post."
+
+      - name: viewcount
+        description: "The number of times the post has been viewed."
+        tests:
+          - not_null

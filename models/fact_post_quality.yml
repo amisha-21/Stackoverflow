@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: fact_post_quality
+    description: "This table aggregates data related to posts, including scores, views, comment counts, and post length for quality analysis."
+    columns:
+      - name: post_date
+        description: "The date the post was created."
+        tests:
+          - not_null
+
+      - name: average_score
+        description: "The average score of all posts for each date."
+        tests:
+          - not_null
+
+      - name: max_score
+        description: "The maximum score of all posts for each date."
+        tests:
+          - not_null
+
+      - name: top_viewed_post_id
+        description: "The ID of one of the top 10 most viewed posts."
+        tests:
+          - not_null
+
+      - name: top_viewed_post_views
+        description: "The number of views for one of the top 10 most viewed posts."
+        tests:
+          - not_null
+
+      - name: post_length
+        description: "The length of the post content."
+
+      - name: length_average_score
+        description: "The average score of posts grouped by their length."
+        tests:
+          - not_null
+
+      - name: length_total_views
+        description: "The total number of views for posts grouped by their length."
+        tests:
+          - not_null
+
+      - name: length_total_comments
+        description: "The total number of comments for posts grouped by their length."
+        tests:
+          - not_null
+
+      - name: total_comments
+        description: "The total number of comments that posts of a certain length have received."
