@@ -48,8 +48,8 @@ Lineages for 3 defined business processes -
 The final output of our efforts is a set of Power BI dashboards that visualize the key insights derived from the Stack Overflow data. These dashboards are designed to be user-friendly, allowing stakeholders to interact with the data and gain valuable insights.
 
 <img width="1071" alt="image" src="https://github.com/amisha-21/Stackoverflow/assets/77116519/654202bb-483a-4d09-a4c4-89cc3a0908f0">
-<img width="1057" alt="image" src="https://github.com/amisha-21/Stackoverflow/assets/77116519/b7b3f0c0-6f7f-4e74-97db-f6359f8dcb07">
 <img width="1060" alt="image" src="https://github.com/amisha-21/Stackoverflow/assets/77116519/24d44228-130a-4428-923c-2a157d03719c">
+<img width="1057" alt="image" src="https://github.com/amisha-21/Stackoverflow/assets/77116519/b7b3f0c0-6f7f-4e74-97db-f6359f8dcb07">
 
 ## Contributors
 
