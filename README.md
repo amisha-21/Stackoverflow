@@ -30,7 +30,7 @@ In the initial phase of our project, our team undertook a comprehensive data pro
 
 ## ETL Jobs on Snowflake
 
-The ETL (Extract, Transform, Load) process was performed on Snowflake, a cloud-based data warehousing platform. This involved extracting raw data from csv/json files, transforming it to meet our analytical needs, and loading it into Snowflake for analytical purposes.
+The ETL (Extract, Transform, Load) process was performed on Snowflake, a cloud-based data warehousing platform. This involved extracting raw data from CSV / JSON files, transforming it to meet our analytical needs, and loading it into Snowflake for analytical purposes.
 
 ## dbt Modeling
 
