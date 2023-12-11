@@ -36,6 +36,14 @@ The ETL (Extract, Transform, Load) process was performed on Snowflake, a cloud-b
 
 dbt was used for modeling the processed data, creating a structured and organized foundation for analytics. This step allowed us to define relationships, aggregations, and business logic that facilitated the development of insightful dashboards.
 
+Lineages for 3 defined business processes - 
+
+![image](https://github.com/amisha-21/Stackoverflow/assets/77116519/adb00606-7c9a-4e98-bece-1cb4c220b379)
+
+![image](https://github.com/amisha-21/Stackoverflow/assets/77116519/424767de-edfa-4e50-b5f0-b4b93dccbcf0)
+
+![image](https://github.com/amisha-21/Stackoverflow/assets/77116519/ab9f2b97-3a0a-4571-84d0-14c6c04db1e6)
+
 ## Power BI Dashboards
 
 The final output of our efforts is a set of Power BI dashboards that visualize the key insights derived from the Stack Overflow data. These dashboards are designed to be user-friendly, allowing stakeholders to interact with the data and gain valuable insights.
