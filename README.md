@@ -38,7 +38,8 @@ dbt was used for modeling the processed data, creating a structured and organize
 
 Lineages for 3 defined business processes - 
 
-![image](https://github.com/amisha-21/Stackoverflow/assets/77116519/adb00606-7c9a-4e98-bece-1cb4c220b379)  ![image](https://github.com/amisha-21/Stackoverflow/assets/77116519/424767de-edfa-4e50-b5f0-b4b93dccbcf0)  
+![image](https://github.com/amisha-21/Stackoverflow/assets/77116519/adb00606-7c9a-4e98-bece-1cb4c220b379)
+![image](https://github.com/amisha-21/Stackoverflow/assets/77116519/424767de-edfa-4e50-b5f0-b4b93dccbcf0)  
 ![image](https://github.com/amisha-21/Stackoverflow/assets/77116519/ab9f2b97-3a0a-4571-84d0-14c6c04db1e6)
 
 
